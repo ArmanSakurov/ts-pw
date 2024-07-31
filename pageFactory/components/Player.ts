@@ -1,14 +1,12 @@
-import { Page, BrowserContext, Locator } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
 export class Player {
-    readonly page: Page;
-    readonly context: BrowserContext;
+    private page: Page;
     readonly GET_FULL_VIDEO_SECTION: Locator;
     readonly LEFT_TOGGLE: Locator;
 
-    constructor(page: Page, context: BrowserContext) {
+    constructor(page: Page) {
         this.page = page;
-        this.context = context;
         this.GET_FULL_VIDEO_SECTION = page.locator('.video-purchase__menu-buttons');
         this.LEFT_TOGGLE = page.locator('.video-purchase__menu-toggle .icon_sc-left');
     }

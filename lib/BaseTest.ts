@@ -1,18 +1,18 @@
 import { test as baseTest } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { HomePage } from "@pages/HomePage";
-import { Player } from "@pages/Player";
+import { VideoPage } from "@pages/VideoPage";
 
 const test = baseTest.extend<{
     homePage: HomePage;
-    player: Player;
+    videoPage: VideoPage;
     makeAxeBuilder: AxeBuilder;
 }>({
     homePage: async ({ page, context }, use) => {
         await use(new HomePage(page, context));
     },
-    player: async ({ page, context }, use) => {
-        await use(new Player(page, context));
+    videoPage: async ({ page, context }, use) => {
+        await use(new VideoPage(page, context));
     },
     makeAxeBuilder: async ({ page }, use) => {
         await use(new AxeBuilder({ page })
