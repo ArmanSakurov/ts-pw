@@ -10,7 +10,7 @@ A test framework using Playwright and TypeScript for end-to-end testing, includi
 The following software are required:
 
 - **Node.js**: Download and install Node.js from [nodejs.org](https://nodejs.org/en/download/)
-- **Java 8 or above**: Allure Reports require Java 8 or higher. If you intend to use SonarQube, install Java 11.
+- **Java 8 or above**: Allure Reports require Java 8 or higher. If you intend to use SonarQube, install Java 11
 - **Allure Commandline**: Install Allure command line for generating Allure Reports:
 ```sh
   npm ci -g allure-commandline
