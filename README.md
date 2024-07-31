@@ -21,13 +21,13 @@ The following software are required:
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/ArmanSakurov/playwright-typescipt-playwright-test.git
+git clone https://github.com/ArmanSakurov/ts-pw.git
 ```
 
 2. Navigate to the project folder and install npm packages:
 
 ```sh
-cd playwright-typescipt-playwright-test
+cd ts-pw
 npm install
 ```
 3. Download required browsers (for the first time installation):
