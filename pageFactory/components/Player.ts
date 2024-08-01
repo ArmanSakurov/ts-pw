@@ -4,13 +4,13 @@ export class Player {
     private page: Page;
     readonly GET_FULL_VIDEO_SECTION: Locator;
     readonly LEFT_TOGGLE: Locator;
-    readonly VIDEO_ELEMENT: Locator;
+    readonly VIDEO_PLAYER: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.GET_FULL_VIDEO_SECTION = page.locator('.video-purchase__menu-buttons');
         this.LEFT_TOGGLE = page.locator('.video-purchase__menu-toggle .icon_sc-left');
-        this.VIDEO_ELEMENT = page.locator('video').first();
+        this.VIDEO_PLAYER = page.locator('#VideoPlayerPage_1 video');
     }
 
     async waitForFullVideoSectionToDisappear(): Promise<void> {
@@ -19,10 +19,10 @@ export class Player {
     }
 
     async isVideoPlaying(): Promise<boolean> {
-        return await this.VIDEO_ELEMENT.evaluate(video => !(video as HTMLVideoElement).paused);
+        return await this.VIDEO_PLAYER.evaluate(video => !(video as HTMLVideoElement).paused);
     }
 
     async isMuted(): Promise<boolean> {
-        return await this.VIDEO_ELEMENT.evaluate(video => (video as HTMLVideoElement).muted);
+        return await this.VIDEO_PLAYER.evaluate(video => (video as HTMLVideoElement).muted);
     }
 }
